@@ -19,60 +19,58 @@
 // Protobuf Java Version: 3.25.2
 package com.google.spanner.executor.v1;
 
-public interface GetCloudInstanceActionOrBuilder
+public interface QueryCancellationActionOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.spanner.executor.v1.GetCloudInstanceAction)
+    // @@protoc_insertion_point(interface_extends:google.spanner.executor.v1.QueryCancellationAction)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Cloud project ID, e.g. "spanner-cloud-systest".
+   * Long running query.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string long_running_sql = 1;</code>
    *
-   * @return The projectId.
+   * @return The longRunningSql.
    */
-  java.lang.String getProjectId();
+  java.lang.String getLongRunningSql();
   /**
    *
    *
    * <pre>
-   * Cloud project ID, e.g. "spanner-cloud-systest".
+   * Long running query.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string long_running_sql = 1;</code>
    *
-   * @return The bytes for projectId.
+   * @return The bytes for longRunningSql.
    */
-  com.google.protobuf.ByteString getProjectIdBytes();
+  com.google.protobuf.ByteString getLongRunningSqlBytes();
 
   /**
    *
    *
    * <pre>
-   * Cloud instance ID (not path) to retrieve the instance from,
-   * e.g. "test-instance".
+   * Format of the cancel query for the cloud database dialect.
    * </pre>
    *
-   * <code>string instance_id = 2;</code>
+   * <code>string cancel_query = 2;</code>
    *
-   * @return The instanceId.
+   * @return The cancelQuery.
    */
-  java.lang.String getInstanceId();
+  java.lang.String getCancelQuery();
   /**
    *
    *
    * <pre>
-   * Cloud instance ID (not path) to retrieve the instance from,
-   * e.g. "test-instance".
+   * Format of the cancel query for the cloud database dialect.
    * </pre>
    *
-   * <code>string instance_id = 2;</code>
+   * <code>string cancel_query = 2;</code>
    *
-   * @return The bytes for instanceId.
+   * @return The bytes for cancelQuery.
    */
-  com.google.protobuf.ByteString getInstanceIdBytes();
+  com.google.protobuf.ByteString getCancelQueryBytes();
 }
