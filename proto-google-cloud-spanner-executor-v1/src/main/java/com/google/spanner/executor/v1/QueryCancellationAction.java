@@ -23,70 +23,72 @@ package com.google.spanner.executor.v1;
  *
  *
  * <pre>
- * Action that gets an operation.
+ * Query cancellation action defines the long running query and the cancel query
+ * format depening on the Cloud database dialect.
  * </pre>
  *
- * Protobuf type {@code google.spanner.executor.v1.GetOperationAction}
+ * Protobuf type {@code google.spanner.executor.v1.QueryCancellationAction}
  */
-public final class GetOperationAction extends com.google.protobuf.GeneratedMessageV3
+public final class QueryCancellationAction extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.spanner.executor.v1.GetOperationAction)
-    GetOperationActionOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.spanner.executor.v1.QueryCancellationAction)
+    QueryCancellationActionOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetOperationAction.newBuilder() to construct.
-  private GetOperationAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use QueryCancellationAction.newBuilder() to construct.
+  private QueryCancellationAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetOperationAction() {
-    operation_ = "";
+  private QueryCancellationAction() {
+    longRunningSql_ = "";
+    cancelQuery_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new GetOperationAction();
+    return new QueryCancellationAction();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.spanner.executor.v1.CloudExecutorProto
-        .internal_static_google_spanner_executor_v1_GetOperationAction_descriptor;
+        .internal_static_google_spanner_executor_v1_QueryCancellationAction_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.spanner.executor.v1.CloudExecutorProto
-        .internal_static_google_spanner_executor_v1_GetOperationAction_fieldAccessorTable
+        .internal_static_google_spanner_executor_v1_QueryCancellationAction_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.spanner.executor.v1.GetOperationAction.class,
-            com.google.spanner.executor.v1.GetOperationAction.Builder.class);
+            com.google.spanner.executor.v1.QueryCancellationAction.class,
+            com.google.spanner.executor.v1.QueryCancellationAction.Builder.class);
   }
 
-  public static final int OPERATION_FIELD_NUMBER = 1;
+  public static final int LONG_RUNNING_SQL_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private volatile java.lang.Object operation_ = "";
+  private volatile java.lang.Object longRunningSql_ = "";
   /**
    *
    *
    * <pre>
-   * The name of the operation resource.
+   * Long running query.
    * </pre>
    *
-   * <code>string operation = 1;</code>
+   * <code>string long_running_sql = 1;</code>
    *
-   * @return The operation.
+   * @return The longRunningSql.
    */
   @java.lang.Override
-  public java.lang.String getOperation() {
-    java.lang.Object ref = operation_;
+  public java.lang.String getLongRunningSql() {
+    java.lang.Object ref = longRunningSql_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      operation_ = s;
+      longRunningSql_ = s;
       return s;
     }
   }
@@ -94,20 +96,71 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The name of the operation resource.
+   * Long running query.
    * </pre>
    *
-   * <code>string operation = 1;</code>
+   * <code>string long_running_sql = 1;</code>
    *
-   * @return The bytes for operation.
+   * @return The bytes for longRunningSql.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getOperationBytes() {
-    java.lang.Object ref = operation_;
+  public com.google.protobuf.ByteString getLongRunningSqlBytes() {
+    java.lang.Object ref = longRunningSql_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      operation_ = b;
+      longRunningSql_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CANCEL_QUERY_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cancelQuery_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Format of the cancel query for the cloud database dialect.
+   * </pre>
+   *
+   * <code>string cancel_query = 2;</code>
+   *
+   * @return The cancelQuery.
+   */
+  @java.lang.Override
+  public java.lang.String getCancelQuery() {
+    java.lang.Object ref = cancelQuery_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cancelQuery_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Format of the cancel query for the cloud database dialect.
+   * </pre>
+   *
+   * <code>string cancel_query = 2;</code>
+   *
+   * @return The bytes for cancelQuery.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCancelQueryBytes() {
+    java.lang.Object ref = cancelQuery_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cancelQuery_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -128,8 +181,11 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operation_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, operation_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(longRunningSql_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, longRunningSql_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cancelQuery_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cancelQuery_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -140,8 +196,11 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operation_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, operation_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(longRunningSql_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, longRunningSql_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cancelQuery_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cancelQuery_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -153,13 +212,14 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.spanner.executor.v1.GetOperationAction)) {
+    if (!(obj instanceof com.google.spanner.executor.v1.QueryCancellationAction)) {
       return super.equals(obj);
     }
-    com.google.spanner.executor.v1.GetOperationAction other =
-        (com.google.spanner.executor.v1.GetOperationAction) obj;
+    com.google.spanner.executor.v1.QueryCancellationAction other =
+        (com.google.spanner.executor.v1.QueryCancellationAction) obj;
 
-    if (!getOperation().equals(other.getOperation())) return false;
+    if (!getLongRunningSql().equals(other.getLongRunningSql())) return false;
+    if (!getCancelQuery().equals(other.getCancelQuery())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -171,78 +231,80 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + OPERATION_FIELD_NUMBER;
-    hash = (53 * hash) + getOperation().hashCode();
+    hash = (37 * hash) + LONG_RUNNING_SQL_FIELD_NUMBER;
+    hash = (53 * hash) + getLongRunningSql().hashCode();
+    hash = (37 * hash) + CANCEL_QUERY_FIELD_NUMBER;
+    hash = (53 * hash) + getCancelQuery().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.spanner.executor.v1.GetOperationAction parseFrom(
+  public static com.google.spanner.executor.v1.QueryCancellationAction parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.spanner.executor.v1.GetOperationAction parseFrom(
+  public static com.google.spanner.executor.v1.QueryCancellationAction parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.spanner.executor.v1.GetOperationAction parseFrom(
+  public static com.google.spanner.executor.v1.QueryCancellationAction parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.spanner.executor.v1.GetOperationAction parseFrom(
+  public static com.google.spanner.executor.v1.QueryCancellationAction parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.spanner.executor.v1.GetOperationAction parseFrom(byte[] data)
+  public static com.google.spanner.executor.v1.QueryCancellationAction parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.spanner.executor.v1.GetOperationAction parseFrom(
+  public static com.google.spanner.executor.v1.QueryCancellationAction parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.spanner.executor.v1.GetOperationAction parseFrom(
+  public static com.google.spanner.executor.v1.QueryCancellationAction parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.spanner.executor.v1.GetOperationAction parseFrom(
+  public static com.google.spanner.executor.v1.QueryCancellationAction parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.spanner.executor.v1.GetOperationAction parseDelimitedFrom(
+  public static com.google.spanner.executor.v1.QueryCancellationAction parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.spanner.executor.v1.GetOperationAction parseDelimitedFrom(
+  public static com.google.spanner.executor.v1.QueryCancellationAction parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.spanner.executor.v1.GetOperationAction parseFrom(
+  public static com.google.spanner.executor.v1.QueryCancellationAction parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.spanner.executor.v1.GetOperationAction parseFrom(
+  public static com.google.spanner.executor.v1.QueryCancellationAction parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -259,7 +321,8 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.spanner.executor.v1.GetOperationAction prototype) {
+  public static Builder newBuilder(
+      com.google.spanner.executor.v1.QueryCancellationAction prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -277,31 +340,32 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Action that gets an operation.
+   * Query cancellation action defines the long running query and the cancel query
+   * format depening on the Cloud database dialect.
    * </pre>
    *
-   * Protobuf type {@code google.spanner.executor.v1.GetOperationAction}
+   * Protobuf type {@code google.spanner.executor.v1.QueryCancellationAction}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.spanner.executor.v1.GetOperationAction)
-      com.google.spanner.executor.v1.GetOperationActionOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.spanner.executor.v1.QueryCancellationAction)
+      com.google.spanner.executor.v1.QueryCancellationActionOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.spanner.executor.v1.CloudExecutorProto
-          .internal_static_google_spanner_executor_v1_GetOperationAction_descriptor;
+          .internal_static_google_spanner_executor_v1_QueryCancellationAction_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.spanner.executor.v1.CloudExecutorProto
-          .internal_static_google_spanner_executor_v1_GetOperationAction_fieldAccessorTable
+          .internal_static_google_spanner_executor_v1_QueryCancellationAction_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.spanner.executor.v1.GetOperationAction.class,
-              com.google.spanner.executor.v1.GetOperationAction.Builder.class);
+              com.google.spanner.executor.v1.QueryCancellationAction.class,
+              com.google.spanner.executor.v1.QueryCancellationAction.Builder.class);
     }
 
-    // Construct using com.google.spanner.executor.v1.GetOperationAction.newBuilder()
+    // Construct using com.google.spanner.executor.v1.QueryCancellationAction.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -312,24 +376,25 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      operation_ = "";
+      longRunningSql_ = "";
+      cancelQuery_ = "";
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.spanner.executor.v1.CloudExecutorProto
-          .internal_static_google_spanner_executor_v1_GetOperationAction_descriptor;
+          .internal_static_google_spanner_executor_v1_QueryCancellationAction_descriptor;
     }
 
     @java.lang.Override
-    public com.google.spanner.executor.v1.GetOperationAction getDefaultInstanceForType() {
-      return com.google.spanner.executor.v1.GetOperationAction.getDefaultInstance();
+    public com.google.spanner.executor.v1.QueryCancellationAction getDefaultInstanceForType() {
+      return com.google.spanner.executor.v1.QueryCancellationAction.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.spanner.executor.v1.GetOperationAction build() {
-      com.google.spanner.executor.v1.GetOperationAction result = buildPartial();
+    public com.google.spanner.executor.v1.QueryCancellationAction build() {
+      com.google.spanner.executor.v1.QueryCancellationAction result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -337,9 +402,9 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
     }
 
     @java.lang.Override
-    public com.google.spanner.executor.v1.GetOperationAction buildPartial() {
-      com.google.spanner.executor.v1.GetOperationAction result =
-          new com.google.spanner.executor.v1.GetOperationAction(this);
+    public com.google.spanner.executor.v1.QueryCancellationAction buildPartial() {
+      com.google.spanner.executor.v1.QueryCancellationAction result =
+          new com.google.spanner.executor.v1.QueryCancellationAction(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -347,10 +412,13 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
       return result;
     }
 
-    private void buildPartial0(com.google.spanner.executor.v1.GetOperationAction result) {
+    private void buildPartial0(com.google.spanner.executor.v1.QueryCancellationAction result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.operation_ = operation_;
+        result.longRunningSql_ = longRunningSql_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cancelQuery_ = cancelQuery_;
       }
     }
 
@@ -389,20 +457,25 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.spanner.executor.v1.GetOperationAction) {
-        return mergeFrom((com.google.spanner.executor.v1.GetOperationAction) other);
+      if (other instanceof com.google.spanner.executor.v1.QueryCancellationAction) {
+        return mergeFrom((com.google.spanner.executor.v1.QueryCancellationAction) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.spanner.executor.v1.GetOperationAction other) {
-      if (other == com.google.spanner.executor.v1.GetOperationAction.getDefaultInstance())
+    public Builder mergeFrom(com.google.spanner.executor.v1.QueryCancellationAction other) {
+      if (other == com.google.spanner.executor.v1.QueryCancellationAction.getDefaultInstance())
         return this;
-      if (!other.getOperation().isEmpty()) {
-        operation_ = other.operation_;
+      if (!other.getLongRunningSql().isEmpty()) {
+        longRunningSql_ = other.longRunningSql_;
         bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      if (!other.getCancelQuery().isEmpty()) {
+        cancelQuery_ = other.cancelQuery_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -433,10 +506,16 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
               break;
             case 10:
               {
-                operation_ = input.readStringRequireUtf8();
+                longRunningSql_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                cancelQuery_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -456,24 +535,24 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
 
     private int bitField0_;
 
-    private java.lang.Object operation_ = "";
+    private java.lang.Object longRunningSql_ = "";
     /**
      *
      *
      * <pre>
-     * The name of the operation resource.
+     * Long running query.
      * </pre>
      *
-     * <code>string operation = 1;</code>
+     * <code>string long_running_sql = 1;</code>
      *
-     * @return The operation.
+     * @return The longRunningSql.
      */
-    public java.lang.String getOperation() {
-      java.lang.Object ref = operation_;
+    public java.lang.String getLongRunningSql() {
+      java.lang.Object ref = longRunningSql_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        operation_ = s;
+        longRunningSql_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -483,19 +562,19 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the operation resource.
+     * Long running query.
      * </pre>
      *
-     * <code>string operation = 1;</code>
+     * <code>string long_running_sql = 1;</code>
      *
-     * @return The bytes for operation.
+     * @return The bytes for longRunningSql.
      */
-    public com.google.protobuf.ByteString getOperationBytes() {
-      java.lang.Object ref = operation_;
+    public com.google.protobuf.ByteString getLongRunningSqlBytes() {
+      java.lang.Object ref = longRunningSql_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        operation_ = b;
+        longRunningSql_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -505,19 +584,19 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the operation resource.
+     * Long running query.
      * </pre>
      *
-     * <code>string operation = 1;</code>
+     * <code>string long_running_sql = 1;</code>
      *
-     * @param value The operation to set.
+     * @param value The longRunningSql to set.
      * @return This builder for chaining.
      */
-    public Builder setOperation(java.lang.String value) {
+    public Builder setLongRunningSql(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      operation_ = value;
+      longRunningSql_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -526,15 +605,15 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the operation resource.
+     * Long running query.
      * </pre>
      *
-     * <code>string operation = 1;</code>
+     * <code>string long_running_sql = 1;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearOperation() {
-      operation_ = getDefaultInstance().getOperation();
+    public Builder clearLongRunningSql() {
+      longRunningSql_ = getDefaultInstance().getLongRunningSql();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
@@ -543,21 +622,127 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the operation resource.
+     * Long running query.
      * </pre>
      *
-     * <code>string operation = 1;</code>
+     * <code>string long_running_sql = 1;</code>
      *
-     * @param value The bytes for operation to set.
+     * @param value The bytes for longRunningSql to set.
      * @return This builder for chaining.
      */
-    public Builder setOperationBytes(com.google.protobuf.ByteString value) {
+    public Builder setLongRunningSqlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      operation_ = value;
+      longRunningSql_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object cancelQuery_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Format of the cancel query for the cloud database dialect.
+     * </pre>
+     *
+     * <code>string cancel_query = 2;</code>
+     *
+     * @return The cancelQuery.
+     */
+    public java.lang.String getCancelQuery() {
+      java.lang.Object ref = cancelQuery_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cancelQuery_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Format of the cancel query for the cloud database dialect.
+     * </pre>
+     *
+     * <code>string cancel_query = 2;</code>
+     *
+     * @return The bytes for cancelQuery.
+     */
+    public com.google.protobuf.ByteString getCancelQueryBytes() {
+      java.lang.Object ref = cancelQuery_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cancelQuery_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Format of the cancel query for the cloud database dialect.
+     * </pre>
+     *
+     * <code>string cancel_query = 2;</code>
+     *
+     * @param value The cancelQuery to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCancelQuery(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      cancelQuery_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Format of the cancel query for the cloud database dialect.
+     * </pre>
+     *
+     * <code>string cancel_query = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCancelQuery() {
+      cancelQuery_ = getDefaultInstance().getCancelQuery();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Format of the cancel query for the cloud database dialect.
+     * </pre>
+     *
+     * <code>string cancel_query = 2;</code>
+     *
+     * @param value The bytes for cancelQuery to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCancelQueryBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      cancelQuery_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -573,24 +758,24 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.spanner.executor.v1.GetOperationAction)
+    // @@protoc_insertion_point(builder_scope:google.spanner.executor.v1.QueryCancellationAction)
   }
 
-  // @@protoc_insertion_point(class_scope:google.spanner.executor.v1.GetOperationAction)
-  private static final com.google.spanner.executor.v1.GetOperationAction DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.spanner.executor.v1.QueryCancellationAction)
+  private static final com.google.spanner.executor.v1.QueryCancellationAction DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.spanner.executor.v1.GetOperationAction();
+    DEFAULT_INSTANCE = new com.google.spanner.executor.v1.QueryCancellationAction();
   }
 
-  public static com.google.spanner.executor.v1.GetOperationAction getDefaultInstance() {
+  public static com.google.spanner.executor.v1.QueryCancellationAction getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetOperationAction> PARSER =
-      new com.google.protobuf.AbstractParser<GetOperationAction>() {
+  private static final com.google.protobuf.Parser<QueryCancellationAction> PARSER =
+      new com.google.protobuf.AbstractParser<QueryCancellationAction>() {
         @java.lang.Override
-        public GetOperationAction parsePartialFrom(
+        public QueryCancellationAction parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -609,17 +794,17 @@ public final class GetOperationAction extends com.google.protobuf.GeneratedMessa
         }
       };
 
-  public static com.google.protobuf.Parser<GetOperationAction> parser() {
+  public static com.google.protobuf.Parser<QueryCancellationAction> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetOperationAction> getParserForType() {
+  public com.google.protobuf.Parser<QueryCancellationAction> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.spanner.executor.v1.GetOperationAction getDefaultInstanceForType() {
+  public com.google.spanner.executor.v1.QueryCancellationAction getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }
